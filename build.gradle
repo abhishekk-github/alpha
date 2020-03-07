@@ -22,6 +22,38 @@ allprojects {
         jcenter()
         
     }
+    ext{
+        //sdk and build tools
+        compileSdkVersion = 29
+        minSdkVersion = 21
+        targetSdkVersion = 29
+        buildToolsVersion = '29.0.2'
+
+        appCompatVersion = '1.1.0'
+        designLibraryVersion = '28.0.0'
+        playServicesVersion = '11.8.0'
+        constraintLayoutVersion = '1.1.3'
+        architectureComponentsVersion = '1.1.1'
+        archLifecycleAnnotaionProcessorVersion = '1.1.1'
+        coreKtxVersion = '1.2.0'
+        multiDexVersion = '1.0.3'
+        recyclerViewVersion = '1.1.0'
+        cardViewVersion = '1.0.0'
+        rxJavaVersion = '2.1.0'
+        rxAndroidVersion = '2.1.0'
+        rxBindingVersion = '2.2.0'
+
+        daggerVersion = '2.26'
+        retrofitVersion = '2.3.0'
+        okHttpVersion = '4.2.2'
+        retrofitRxJavaAdapterVersion = '1.0.0'
+        roomVersion = '1.1.1'
+
+        glideVersion = '4.10.0'
+
+        junitVersion = '4.12'
+        androidTestJunitVersion = '1.1.1'
+    }
 }
 
 task clean(type: Delete) {
