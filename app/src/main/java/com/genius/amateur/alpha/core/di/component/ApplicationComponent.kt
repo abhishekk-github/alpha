@@ -1,6 +1,9 @@
 package com.genius.amateur.alpha.core.di.component
 
+import android.app.Application
 import com.genius.amateur.alpha.core.AlphaApplication
+import com.genius.amateur.alpha.core.di.module.ActivityInjectorModule
+import com.genius.amateur.alpha.core.di.module.ApplicationModule
 import com.genius.amateur.alpha.core.di.module.CoreServicesModule
 import com.ixigo.lib.utils.scope.ApplicationScope
 import dagger.BindsInstance
@@ -8,16 +11,26 @@ import dagger.Component
 import dagger.android.support.AndroidSupportInjectionModule
 
 @ApplicationScope
-@Component(modules = [ CoreServicesModule::class,AndroidSupportInjectionModule::class ])
+@Component(modules = [ApplicationModule::class, CoreServicesModule::class, AndroidSupportInjectionModule::class, ActivityInjectorModule::class])
 interface ApplicationComponent {
 
     fun inject(alphaApplication: AlphaApplication)
-
+/*
     @Component.Factory
-    interface Factory{
+    interface Factory {
 
-        fun application(@BindsInstance application: AlphaApplication): Factory
+        fun create(@BindsInstance application: Application,@BindsInstance applicationModule : ApplicationModule): ApplicationComponent
+    }*/
+
+    @Component.Builder
+    interface Builder {
+        @BindsInstance
+        fun application(application: AlphaApplication): Builder
+
+        @BindsInstance // you'll call this when setting up Dagger
+        fun mqttServer(application: Application): Builder
 
         fun build(): ApplicationComponent
     }
+
 }
