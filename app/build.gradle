@@ -22,14 +22,14 @@ android {
             testCoverageEnabled true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", "BASE_URL", "\"http://dummy.restapiexample.com/\""
+            buildConfigField "String", "BASE_URL", "\"https://demo9502422.mockable.io/api/v1/\""
             buildConfigField "Boolean", "DEBUG_MODE", "false"
             buildConfigField 'boolean', 'ENABLE_HTTP_LOGS', 'false'
             buildConfigField("String", "API_KEY", "\"5979c6731100001e039edcb3\"")
         }
         debug {
             testCoverageEnabled true
-            buildConfigField "String", "BASE_URL", "\"http://dummy.restapiexample.com/\""
+            buildConfigField "String", "BASE_URL", "\"https://demo9502422.mockable.io/api/v1/\""
             buildConfigField "Boolean", "DEBUG_MODE", "true"
             buildConfigField 'boolean', 'ENABLE_HTTP_LOGS', 'true'
             buildConfigField("String", "API_KEY", "\"5979c6731100001e039edcb3\"")
@@ -79,7 +79,6 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
 
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okHttpVersion"
-    implementation "com.squareup.retrofit2:converter-jackson:$rootProject.retrofitVersion"
 
     // dependency injection
     kapt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"

@@ -15,7 +15,7 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.CallAdapter
 import retrofit2.Converter
 import retrofit2.Retrofit
-import retrofit2.converter.jackson.JacksonConverterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
 import java.util.concurrent.TimeUnit
 import javax.inject.Named
@@ -40,7 +40,7 @@ class NetworkModule {
     @Provides
     @ApplicationScope
     fun provideConverterFactory(): Converter.Factory {
-        return JacksonConverterFactory.create()
+        return GsonConverterFactory.create()
     }
 
     @Provides

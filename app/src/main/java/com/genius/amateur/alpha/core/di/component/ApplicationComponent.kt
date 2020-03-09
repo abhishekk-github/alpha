@@ -1,6 +1,5 @@
 package com.genius.amateur.alpha.core.di.component
 
-import android.app.Application
 import com.genius.amateur.alpha.core.AlphaApplication
 import com.genius.amateur.alpha.core.di.module.ActivityInjectorModule
 import com.genius.amateur.alpha.core.di.module.ApplicationModule
@@ -26,9 +25,6 @@ interface ApplicationComponent {
     interface Builder {
         @BindsInstance
         fun application(application: AlphaApplication): Builder
-
-        @BindsInstance // you'll call this when setting up Dagger
-        fun mqttServer(application: Application): Builder
 
         fun build(): ApplicationComponent
     }

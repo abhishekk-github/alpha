@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
         call.enqueue(object : Callback<EmployeeList>{
             override fun onFailure(call: Call<EmployeeList>, t: Throwable) {
-                Log.v("Employee", "fetching failed");
+                Log.v("Employee", "fetching failed " + t.message);
             }
 
             override fun onResponse(call: Call<EmployeeList>, response: Response<EmployeeList>) {
