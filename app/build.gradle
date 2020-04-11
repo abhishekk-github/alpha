@@ -7,6 +7,11 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
 
+
+    viewBinding {
+        enabled = true
+    }
+
     defaultConfig {
         applicationId "com.genius.amateur.alpha"
         minSdkVersion 21
@@ -60,13 +65,15 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
     implementation "androidx.cardview:cardview:$rootProject.cardViewVersion"
 
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.0.0'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.0.0'
+    implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.navigationUtil"
+    implementation "androidx.navigation:navigation-ui-ktx:$rootProject.navigationUtil"
 
 
     implementation "com.android.support:multidex:$rootProject.multiDexVersion"
     implementation "android.arch.lifecycle:runtime:$rootProject.architectureComponentsVersion"
     implementation "android.arch.lifecycle:extensions:$rootProject.architectureComponentsVersion"
+    implementation "androidx.appcompat:appcompat:$rootProject.appCompatVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintLayoutVersion"
     kapt "android.arch.lifecycle:common-java8:$rootProject.archLifecycleAnnotaionProcessorVersion"
 
 
@@ -93,4 +100,3 @@ dependencies {
     testImplementation "junit:junit:$rootProject.junitVersion"
     androidTestImplementation "androidx.test.ext:junit:$rootProject.androidTestJunitVersion"
 }
-

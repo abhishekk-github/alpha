@@ -42,6 +42,7 @@ allprojects {
         rxJavaVersion = '2.1.0'
         rxAndroidVersion = '2.1.0'
         rxBindingVersion = '2.2.0'
+        navigationUtil  = '2.2.1'
 
         daggerVersion = '2.26'
         retrofitVersion = '2.3.0'
